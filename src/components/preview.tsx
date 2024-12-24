@@ -3,9 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { displayPreview } from "../redux/app";
 
 function Preview({ contentRef }: { contentRef: any }) {
-  const { binderName, cards, middleCardOrientation } = useSelector(
-    (state: any) => state.app
-  );
+  const { binderName, cards, middleCardOrientation, printPadding } =
+    useSelector((state: any) => state.app);
   const dispatch = useDispatch();
 
   return (
@@ -34,7 +33,7 @@ function Preview({ contentRef }: { contentRef: any }) {
         />
         <img
           src="/images/logo.png"
-          className="mt-[40px] w-2/5 h-[100px] mb-[13px]"
+          className="mt-[15px] w-2/5 h-[100px] mb-[13px]"
         />
         <h3 className="font-normal font-alfaSlabOne text-[32px] text-black mb-[30px] min-h-12">
           {binderName}
@@ -84,8 +83,14 @@ function Preview({ contentRef }: { contentRef: any }) {
               @breakingbinders
             </span>
           </div>
-          <div className="w-full bg-black text-white font-helveticaBold text-[16px] text-center py-[6px]">
-            www.breakingbinders.com
+          <div className="w-full bg-black h-[35px] flex items-center justify-center">
+            <span
+              className={`text-white font-helveticaBold text-[16px] ${
+                printPadding ? "pb-[18px]" : ""
+              }`}
+            >
+              www.breakingbinders.com
+            </span>
           </div>
         </div>
       </div>

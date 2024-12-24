@@ -7,6 +7,7 @@ import {
   displayPreview,
   setBinderName,
   switchOrientation,
+  setPrintPadding,
 } from "../redux/app";
 import html2canvas from "html2canvas";
 import { useReactToPrint } from "react-to-print";
@@ -21,6 +22,7 @@ function CoverForm({ contentRef }: { contentRef: any }) {
   const reactToPrintFn = useReactToPrint({ contentRef });
 
   const handleSaveImage = async () => {
+    dispatch(setPrintPadding({ display: true }));
     dispatch(displayPreview({ display: true }));
     setTimeout(async () => {
       const element = document.getElementById("print");
@@ -35,6 +37,7 @@ function CoverForm({ contentRef }: { contentRef: any }) {
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+        dispatch(setPrintPadding({ display: false }));
       }
     }, 100);
   };

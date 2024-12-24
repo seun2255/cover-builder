@@ -9,6 +9,7 @@ const initialState = {
   middleCardOrientation: "landscape",
   showPreview: false,
   printableDivRef: "",
+  printPadding: false,
 };
 
 interface setBinderName {
@@ -69,6 +70,9 @@ export const appSlice = createSlice({
       state.middleCardOrientation =
         state.middleCardOrientation === "portrait" ? "landscape" : "portrait";
     },
+    setPrintPadding: (state: any, action: Display) => {
+      state.printPadding = action.payload.display;
+    },
   },
 });
 
@@ -79,6 +83,7 @@ export const {
   setBinderName,
   setCard,
   switchOrientation,
+  setPrintPadding,
 } = appSlice.actions;
 
 export default appSlice.reducer;
