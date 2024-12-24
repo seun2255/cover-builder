@@ -44,7 +44,7 @@ function CoverForm({ contentRef }: { contentRef: any }) {
   };
 
   return (
-    <div className="flex-1 h-full flex items-center justify-center">
+    <div className="flex-1 h-full max-h-[640px] lg:p-2 sm:p-0 sm:h-fit sm:max-w-[36rem] sm:w-1/2 sm:mx-auto my-auto flex items-center justify-center">
       <div className="w-[600px] h-[90%] sm:w-[98%] sm:h-[96%] rounded-[20px] border-black border-[2px] flex flex-col items-center py-[25px]">
         <h3 className="font-bold text-[26px] text-black mb-[20px]">
           Build your cover
@@ -52,7 +52,7 @@ function CoverForm({ contentRef }: { contentRef: any }) {
         <div className="w-full sm:flex-1">
           <div className="w-full">
             <div
-              className="w-full px-[20px] py-[10px] font-medium text-[22px] border-y-black border-y-[1px] cursor-pointer"
+              className="w-full px-[20px] py-[10px] font-medium text-[22px] sm:text-[16px] border-y-black border-y-[1px] cursor-pointer"
               onClick={() => setSelectedField(1)}
             >
               Binder Name
@@ -72,7 +72,7 @@ function CoverForm({ contentRef }: { contentRef: any }) {
           </div>
           <div className="w-full">
             <div
-              className="w-full px-[20px] py-[10px] font-medium text-[22px] border-y-black border-y-[1px] cursor-pointer"
+              className="w-full px-[20px] py-[10px] font-medium text-[22px] sm:text-[16px] border-y-black border-y-[1px] cursor-pointer"
               onClick={() => setSelectedField(2)}
             >
               Cards
@@ -85,15 +85,15 @@ function CoverForm({ contentRef }: { contentRef: any }) {
                   className="w-[25px] h-[25px] mt-[10px] cursor-pointer"
                   onClick={() => dispatch(switchOrientation())}
                 />
-                <div className="w-full px-[60px] pb-[30px] pt-[10px] flex justify-between">
+                <div className="w-full px-[20px] pb-[10px] pt-[10px] flex justify-between">
                   {cards.map((card: any, index: number) => {
                     return (
                       <div
                         key={index}
                         className={`${
                           index === 1 && middleCardOrientation === "landscape"
-                            ? "w-[160px] h-[90px]"
-                            : "w-[110px] h-[160px]"
+                            ? "w-[160px] h-[90px] sm:w-[120px] sm:h-[60px]"
+                            : "w-[110px] h-[160px] sm:w-[80px] sm:h-[120px]"
                         } bg-[grey] cursor-pointer`}
                         onClick={() =>
                           dispatch(displayGallery({ display: true, index }))
@@ -114,22 +114,22 @@ function CoverForm({ contentRef }: { contentRef: any }) {
             )}
           </div>
         </div>
-        <div className="w-full px-[20px] flex justify-between mt-auto">
+        <div className="w-full px-[20px] sm:mt-24 flex justify-between mt-auto">
           <button
-            className="font-medium text-[16px] w-[100px] py-[7px] text-white bg-[blue]"
+            className="font-medium text-[16px] sm:text-[13px] w-[110px] sm:w-fit px-4 py-[7px] sm:py-[5px] text-white bg-[blue] text-center "
             onClick={() => dispatch(displayPreview({ display: true }))}
           >
             Preview
           </button>
           <div className="flex gap-[10px]">
             <button
-              className="font-medium text-[16px] w-[100px] py-[7px] text-white bg-[green]"
+              className="font-medium text-[16px] sm:text-[13px] w-[100px] sm:w-[70px] py-[7px] sm:py-[5px] text-white bg-[#5e4e4e] text-center"
               onClick={handleSaveImage}
             >
               Save
             </button>
             <button
-              className="font-medium text-[16px] w-[100px] py-[7px] text-white bg-[red]"
+              className="font-medium text-[16px] sm:text-[13px] w-[100px] sm:w-[70px] py-[7px] sm:py-[5px] text-white bg-[black] text-center"
               onClick={handlePrint}
             >
               Print

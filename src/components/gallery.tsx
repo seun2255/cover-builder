@@ -8,9 +8,13 @@ function Gallery() {
   const { cardIndex } = useSelector((state: any) => state.app);
   const dispatch = useDispatch();
 
+  function isMobileViewport() {
+    return window.innerWidth < 767;
+  }
+
   return (
     <div
-      className="w-[40%] h-full border-l-[1px] border-black p-[20px] flex flex-col"
+      className="w-[40%] sm:absolute sm:top-0 sm:left-0 sm:w-full sm:z-2 h-full border-l-[1px] border-black p-[20px] flex flex-col"
       style={{
         backgroundImage: `url('https://giovannimuzzolini.com/psd-tools/img/checkerboard.jpg')`,
       }}
@@ -33,9 +37,13 @@ function Gallery() {
                 src={card.src}
                 alt={card.name}
                 className="cursor-pointer"
-                onClick={() =>
-                  dispatch(setCard({ image: card, index: cardIndex }))
-                }
+                onClick={() => {
+                  dispatch(setCard({ image: card, index: cardIndex }));
+                  if (isMobileViewport())
+                    dispatch(
+                      displayGallery({ display: false, index: cardIndex })
+                    );
+                }}
               />
             );
           }
