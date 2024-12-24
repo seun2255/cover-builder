@@ -21,19 +21,22 @@ function CoverForm({ contentRef }: { contentRef: any }) {
   const reactToPrintFn = useReactToPrint({ contentRef });
 
   const handleSaveImage = async () => {
-    const element = document.getElementById("print");
-    if (element) {
-      const canvas = await html2canvas(element);
-      const data = canvas.toDataURL("image/jpg");
-      const link = document.createElement("a");
+    dispatch(displayPreview({ display: true }));
+    setTimeout(async () => {
+      const element = document.getElementById("print");
+      if (element) {
+        const canvas = await html2canvas(element);
+        const data = canvas.toDataURL("image/jpg");
+        const link = document.createElement("a");
 
-      link.href = data;
-      link.download = "cover.jpg";
+        link.href = data;
+        link.download = "cover.jpg";
 
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    }, 100);
   };
 
   const handlePrint = () => {

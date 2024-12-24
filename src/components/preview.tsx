@@ -10,7 +10,7 @@ function Preview({ contentRef }: { contentRef: any }) {
 
   return (
     <div
-      className="w-[40%] sm:absolute sm:top-0 sm:left-0 sm:w-screen smaller:w-[120vw] sm:z-2 h-full smaller:h-[120vh] xxs:w-[130vw] xxs:h-[130vh] lg:w-[45vw] lg:h-[110vh] sm:h-full flex flex-col justify-center border-l-[1px] border-black overflow-clip "
+      className="w-[40%] sm:absolute sm:top-0 sm:left-0 sm:w-screen sm:z-2 h-full lg:w-[45vw] lg:h-[110vh] sm:h-full flex flex-col justify-center border-l-[1px] border-black overflow-clip "
       style={{
         backgroundImage: `url('https://giovannimuzzolini.com/psd-tools/img/checkerboard.jpg')`,
       }}
@@ -24,7 +24,7 @@ function Preview({ contentRef }: { contentRef: any }) {
         />
       </div>
       <div
-        className="w-[451.5px] h-[493.5px] mx-auto my-auto sm:mt-0 bg-[#a8a8a7] flex flex-col items-center transform origin-center small:scale-90 xxs:scale-[0.8] lg:scale-[0.85] sm:scale-100 relative bottom-6 lg:bottom-20 sm:bottom-0"
+        className="w-[451.5px] smaller:w-screen h-[493.5px] mx-auto my-auto sm:mt-0 bg-[#a8a8a7] flex flex-col items-center transform origin-center small:scale-90 smaller:scale-75 lg:scale-[0.85] sm:scale-100 relative bottom-6 lg:bottom-20 sm:bottom-0"
         id="print"
         ref={contentRef}
       >
@@ -39,8 +39,8 @@ function Preview({ contentRef }: { contentRef: any }) {
         <h3 className="font-normal font-alfaSlabOne text-[32px] text-black mb-[30px] min-h-12">
           {binderName}
         </h3>
-        <div className="w-full flex px-[40px] pl-[50px] relative left-[8px]">
-          <div className="w-[120px] h-[160px] bg-[grey] -rotate-[15deg] absolute z-[1]">
+        <div className="w-full flex px-[40px] pl-[50px] relative left-[8px] xxs:-left-[12px]">
+          <div className="w-[120px] h-[160px] bg-[grey] -rotate-[15deg] absolute z-[1] xxs:scale-90">
             {cards[0].src && (
               <img
                 src={cards[0].src}
@@ -52,8 +52,8 @@ function Preview({ contentRef }: { contentRef: any }) {
           <div
             className={`bg-[grey] absolute z-[2] ${
               middleCardOrientation === "landscape"
-                ? "w-[160px] h-[110px] top-[10px] left-[32%]"
-                : "w-[120px] h-[160px] -top-[10px] left-[35.6%]"
+                ? "w-[160px] h-[110px] top-[10px] left-[32%] xxs:scale-90"
+                : "w-[120px] h-[160px] -top-[10px] left-[35.6%] xxs:scale-90"
             }`}
           >
             {cards[1].src && (
@@ -64,7 +64,7 @@ function Preview({ contentRef }: { contentRef: any }) {
               />
             )}
           </div>
-          <div className="w-[120px] h-[160px] bg-[grey] rotate-[15deg] absolute z-[3] left-[60%]">
+          <div className="w-[120px] h-[160px] bg-[grey] rotate-[15deg] absolute z-[3] left-[60%] xxs:scale-90">
             {cards[2].src && (
               <img
                 src={cards[2].src}

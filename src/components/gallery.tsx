@@ -9,7 +9,7 @@ function Gallery() {
   const dispatch = useDispatch();
 
   function isMobileViewport() {
-    return window.innerWidth < 767;
+    return window.innerWidth < 960;
   }
 
   return (
