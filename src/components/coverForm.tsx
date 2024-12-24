@@ -58,10 +58,16 @@ function CoverForm({ contentRef }: { contentRef: any }) {
         <div className="w-full sm:flex-1">
           <div className="w-full">
             <div
-              className="w-full px-[20px] py-[10px] font-medium text-[22px] sm:text-[16px] border-y-black border-y-[1px] cursor-pointer"
+              className="w-full flex justify-between items-center px-[20px] py-[10px] font-medium text-[22px] sm:text-[16px] border-y-black border-y-[1px] cursor-pointer"
               onClick={() => setSelectedField(1)}
             >
-              Binder Name
+              <p>Binder Name</p>
+              <img
+                src="/images/expand.svg"
+                className={
+                  "w-6 h-6" + (selectedField === 1 ? " rotate-180" : " ")
+                }
+              />
             </div>
             {selectedField === 1 && (
               <div className="w-full px-[20px] py-[10px]">
@@ -78,10 +84,16 @@ function CoverForm({ contentRef }: { contentRef: any }) {
           </div>
           <div className="w-full">
             <div
-              className="w-full px-[20px] py-[10px] font-medium text-[22px] sm:text-[16px] border-y-black border-y-[1px] cursor-pointer"
+              className="w-full flex justify-between items-center px-[20px] py-[10px] font-medium text-[22px] sm:text-[16px] border-y-black border-y-[1px] cursor-pointer"
               onClick={() => setSelectedField(2)}
             >
-              Cards
+              <p>Cards</p>
+              <img
+                src="/images/expand.svg"
+                className={
+                  "w-6 h-6" + (selectedField === 2 ? " rotate-180" : " ")
+                }
+              />
             </div>
             {selectedField === 2 && (
               <div className="flex flex-col w-full items-center">
