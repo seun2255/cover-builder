@@ -23,7 +23,7 @@ function Preview({ contentRef }: { contentRef: any }) {
         />
       </div>
       <div
-        className="w-[451.5px] smaller:w-screen h-[493.5px] mx-auto my-auto sm:mt-0 bg-[#a8a8a7] flex flex-col items-center transform origin-center small:scale-90 smaller:scale-75 lg:scale-[0.85] sm:scale-100 relative bottom-6 lg:bottom-20 sm:bottom-0"
+        className="w-[451.5px] smaller:w-screen h-[493.5px] print:scale-x-[1.81] print:scale-y-[2.15] print:top-[17.4rem] print:bottom-0 mx-auto my-auto sm:mt-0 bg-[#a8a8a7] flex flex-col items-center transform origin-center small:scale-90 smaller:scale-75 lg:scale-[0.85] sm:scale-100 relative bottom-6 lg:bottom-20 sm:bottom-0"
         id="print"
         ref={contentRef}
       >

@@ -103,4 +103,9 @@ button:focus-visible {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: #3f3f47;
   }
+
+  .cover-print {
+    width: 100vw;
+    height: 100vh;
+  }
 }
